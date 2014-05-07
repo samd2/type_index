@@ -4,9 +4,9 @@
 <title>Getting started</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
-<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
-<link rel="prev" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
+<link rel="prev" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
 <link rel="next" href="how_it_works.html" title="How it works">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,21 +34,17 @@
       with Boost.Variant</a></span></dt>
 </dl></div>
 <p>
-      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_info</span></code> is a drop-in replacement for <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span></code>
-      and <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_index</span></code> is a drop-in replacement for
-      <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_index</span></code>. Unlike Standard Library versions
-      those classes may work without RTTI.
+      <code class="computeroutput"><a class="link" href="../boost/typeindex/type_info.html" title="Type definition type_info">boost::typeindex::type_info</a></code>
+      is a drop-in replacement for <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span></code>
+      and <code class="computeroutput"><a class="link" href="../boost/typeindex/type_index.html" title="Type definition type_index">boost::typeindex::type_index</a></code>
+      is a drop-in replacement for <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_index</span></code>.
+      Unlike Standard Library versions those classes can work without RTTI.
     </p>
 <p>
       <code class="computeroutput"><span class="identifier">type_index</span></code> provides the full
       set of comparison operators, hashing functions and ostream operators, so it
       can be used with any container class.
     </p>
-<p>
-      Through all the examples, we'll assume that the following namespace alias is
-      in effect:
-    </p>
-<pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">bti</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">;</span></pre>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
 <a name="boost_typeindex.getting_started.how_to_use"></a><a class="link" href="getting_started.html#boost_typeindex.getting_started.how_to_use" title="How to use">How to use</a>
@@ -59,6 +55,7 @@
 <div class="informaltable">
 <a name="boost_typeindex.getting_started.how_to_use.porting"></a><table class="table">
 <colgroup>
+<col>
 <col>
 <col>
 </colgroup>
@@ -73,6 +70,11 @@
                   With the following:
                 </p>
               </th>
+<th>
+                <p>
+                  More Info
+                </p>
+              </th>
 </tr></thead>
 <tbody>
 <tr>
@@ -85,6 +87,11 @@
 <pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">type_index</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 </pre>
               </td>
+<td>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost_typeindex_header_reference.html#header.boost.type_index_hpp" title="Header &lt;boost/type_index.hpp&gt;">more... </a></code>
+                </p>
+              </td>
 </tr>
 <tr>
 <td>
@@ -92,44 +99,93 @@
 </pre>
               </td>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_index</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_index</span>
 </pre>
+              </td>
+<td>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_index.html" title="Type definition type_index">more... </a></code>
+                </p>
               </td>
 </tr>
 <tr>
 <td>
 <pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">typeid</span><span class="special">(</span><span class="identifier">T</span><span class="special">)</span>
-<span class="keyword">typeid</span><span class="special">(</span><span class="identifier">please_save_modifiers</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;)</span>
 <span class="keyword">typeid</span><span class="special">(</span><span class="identifier">T</span><span class="special">).</span><span class="identifier">name</span><span class="special">()</span> <span class="comment">// not human readable</span>
 <span class="keyword">typeid</span><span class="special">(</span><span class="identifier">variable</span><span class="special">)</span>
 </pre>
               </td>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;()</span>
-<span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id_with_cvr</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;()</span>
-<span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;().</span><span class="identifier">pretty_name</span><span class="special">()</span> <span class="comment">// human readable</span>
-<span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id_runtime</span><span class="special">(</span><span class="identifier">variable</span><span class="special">)</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;()</span>
+<span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;().</span><span class="identifier">pretty_name</span><span class="special">()</span> <span class="comment">// human readable</span>
+<span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id_runtime</span><span class="special">(</span><span class="identifier">variable</span><span class="special">)</span>
 </pre>
+              </td>
+<td>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_id.html" title="Function template type_id">more... </a></code>
+                </p>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_index.html" title="Type definition type_index">more... </a></code>
+                </p>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_id_runtime.html" title="Function template type_id_runtime">more...
+                  </a></code>
+                </p>
               </td>
 </tr>
 <tr>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">v1</span> <span class="special">=</span> <span class="keyword">typeid</span><span class="special">(</span><span class="keyword">int</span><span class="special">);</span>  <span class="comment">// when reference to `std::type_info` is required</span>
-<span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">*</span> <span class="identifier">v2</span> <span class="special">=</span> <span class="special">&amp;</span><span class="keyword">typeid</span><span class="special">(</span><span class="keyword">int</span><span class="special">);</span> <span class="comment">// other cases</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="comment">// attempt to save const, volatile, reference</span>
+<span class="keyword">typeid</span><span class="special">(</span><span class="identifier">please_save_modifiers</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;)</span>
 </pre>
               </td>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">const</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">v1</span> <span class="special">=</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
-<span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_index</span> <span class="identifier">v2</span> <span class="special">=</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;();</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="comment">// cvr = const, volatile, reference</span>
+<span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id_with_cvr</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;()</span>
 </pre>
+              </td>
+<td>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_id_with_cvr.html" title="Function template type_id_with_cvr">more...
+                  </a></code>
+                </p>
+              </td>
+</tr>
+<tr>
+<td>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="comment">// when reference to `std::type_info` is required</span>
+<span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">v1</span> <span class="special">=</span> <span class="keyword">typeid</span><span class="special">(</span><span class="keyword">int</span><span class="special">);</span>
+
+<span class="comment">// other cases</span>
+<span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">*</span> <span class="identifier">v2</span> <span class="special">=</span> <span class="special">&amp;</span><span class="keyword">typeid</span><span class="special">(</span><span class="keyword">int</span><span class="special">);</span>
+</pre>
+              </td>
+<td>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">v1</span>
+    <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
+
+<span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_index</span> <span class="identifier">v2</span>
+    <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;();</span>
+</pre>
+              </td>
+<td>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_index.html" title="Type definition type_index">more... </a></code>
+                </p>
+                <p>
+                  <code class="computeroutput"><a class="link" href="../boost/typeindex/type_id.html" title="Function template type_id">more... </a></code>
+                </p>
               </td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>
-        If you are using <code class="computeroutput"><span class="identifier">type_id_runtime</span><span class="special">()</span></code> methods and RTTI is disabled, make sure
-        that classes that are passed to <code class="computeroutput"><span class="identifier">type_id_runtime</span><span class="special">()</span></code> are marked with <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_REGISTER_CLASS</span></code>
+        If you are using <code class="computeroutput"><a class="link" href="../boost/typeindex/type_id_runtime.html" title="Function template type_id_runtime">type_id_runtime()</a></code>
+        methods and RTTI is disabled, make sure that classes that are passed to
+        <code class="computeroutput"><span class="identifier">type_id_runtime</span><span class="special">()</span></code>
+        are marked with <code class="computeroutput"><a class="link" href="../BOOST_TYPE_INDEX_REGISTER_CLASS.html" title="Macro BOOST_TYPE_INDEX_REGISTER_CLASS">BOOST_TYPE_INDEX_REGISTER_CLASS</a></code>
         macro.
       </p>
 </div>
@@ -178,10 +234,10 @@
 </pre>
               </td>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">virtual</span> <span class="keyword">const</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_info</span> <span class="special">&amp;</span> <span class="identifier">type</span><span class="special">()</span> <span class="keyword">const</span> <span class="identifier">BOOST_NOEXCEPT</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">virtual</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_info</span> <span class="special">&amp;</span> <span class="identifier">type</span><span class="special">()</span> <span class="keyword">const</span> <span class="identifier">BOOST_NOEXCEPT</span>
 <span class="special">{</span>
     <span class="comment">// now works even with RTTI disabled</span>
-    <span class="keyword">return</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
               </td>
@@ -251,14 +307,14 @@
               </td>
 <td>
 <pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">class</span> <span class="identifier">reflect</span>
-    <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">static_visitor</span><span class="special">&lt;</span><span class="keyword">const</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;&gt;</span>
+    <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">static_visitor</span><span class="special">&lt;</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;&gt;</span>
 <span class="special">{</span>
 <span class="keyword">public</span><span class="special">:</span> <span class="comment">// visitor interfaces</span>
 
     <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">typename</span> <span class="identifier">T</span><span class="special">&gt;</span>
-    <span class="keyword">const</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="keyword">operator</span><span class="special">()(</span><span class="keyword">const</span> <span class="identifier">T</span><span class="special">&amp;)</span> <span class="keyword">const</span> <span class="identifier">BOOST_NOEXCEPT</span>
+    <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="keyword">operator</span><span class="special">()(</span><span class="keyword">const</span> <span class="identifier">T</span><span class="special">&amp;)</span> <span class="keyword">const</span> <span class="identifier">BOOST_NOEXCEPT</span>
     <span class="special">{</span>
-        <span class="keyword">return</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
+        <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;().</span><span class="identifier">type_info</span><span class="special">();</span>
     <span class="special">}</span>
 
 <span class="special">};</span>
@@ -277,7 +333,7 @@
 </pre>
               </td>
 <td>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">const</span> <span class="identifier">bti</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">type</span><span class="special">()</span> <span class="keyword">const</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_info</span><span class="special">&amp;</span> <span class="identifier">type</span><span class="special">()</span> <span class="keyword">const</span>
 <span class="special">{</span>
     <span class="identifier">detail</span><span class="special">::</span><span class="identifier">variant</span><span class="special">::</span><span class="identifier">reflect</span> <span class="identifier">visitor</span><span class="special">;</span>
     <span class="keyword">return</span> <span class="keyword">this</span><span class="special">-&gt;</span><span class="identifier">apply_visitor</span><span class="special">(</span><span class="identifier">visitor</span><span class="special">);</span>

@@ -4,7 +4,7 @@
 <title>Function template type_id_runtime</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
+<link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
 <link rel="up" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp" title="Header &lt;boost/type_index.hpp&gt;">
 <link rel="prev" href="type_id_with_cvr.html" title="Function template type_id_with_cvr">
 <link rel="next" href="../../BOOST_TYPE_INDEX_USER_TYPEINDEX.html" title="Macro BOOST_TYPE_INDEX_USER_TYPEINDEX">
@@ -23,10 +23,10 @@
 <a accesskey="p" href="type_id_with_cvr.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="../../BOOST_TYPE_INDEX_USER_TYPEINDEX.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
-<a name="boost.typeind.type_id_runtime"></a><div class="titlepage"></div>
+<a name="boost.typeindex.type_id_runtime"></a><div class="titlepage"></div>
 <div class="refnamediv">
 <h2><span class="refentrytitle">Function template type_id_runtime</span></h2>
-<p>boost::typeind::type_id_runtime</p>
+<p>boost::typeindex::type_id_runtime</p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
 <div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp" title="Header &lt;boost/type_index.hpp&gt;">boost/type_index.hpp</a>&gt;
@@ -34,7 +34,7 @@
 </span>
 <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">type_index</span> <span class="identifier">type_id_runtime</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> runtime_val<span class="special">)</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp62259728"></a><h2>Description</h2>
+<a name="idp5710912"></a><h2>Description</h2>
 <p>Function that works exactly like C++ typeid(rtti_val) call, but returns boost::type_index.</p>
 <p>Retunrs runtime information about specified type.</p>
 <p><span class="bold"><strong>Requirements:</strong></span> RTTI available or Base and Derived classes must be marked with BOOST_TYPE_INDEX_REGISTER_CLASS.</p>
@@ -66,7 +66,7 @@
 </tr>
 <tr>
 <td><p><span class="term">Returns:</span></p></td>
-<td><p>boost::typeind::type_index with information about the specified variable. </p></td>
+<td><p>boost::typeindex::type_index with information about the specified variable. </p></td>
 </tr>
 <tr>
 <td><p><span class="term">Throws:</span></p></td>

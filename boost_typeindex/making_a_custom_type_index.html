@@ -1,12 +1,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Making own type_index</title>
+<title>Making a custom type_index</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
-<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
-<link rel="prev" href="../boost/typeind/type_index_facade.html" title="Class template type_index_facade">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
+<link rel="prev" href="../boost/typeindex/hash_value.html" title="Function template hash_value">
 <link rel="next" href="space_and_performance.html" title="Space and Performance">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -20,17 +20,18 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../boost/typeind/type_index_facade.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="space_and_performance.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="../boost/typeindex/hash_value.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="space_and_performance.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="boost_typeindex.making_own_type_index"></a><a class="link" href="making_own_type_index.html" title="Making own type_index">Making own type_index</a>
+<a name="boost_typeindex.making_a_custom_type_index"></a><a class="link" href="making_a_custom_type_index.html" title="Making a custom type_index">Making a custom
+    type_index</a>
 </h2></div></div></div>
 <div class="toc"><dl>
-<dt><span class="section"><a href="making_own_type_index.html#boost_typeindex.making_own_type_index.basics">Basics</a></span></dt>
-<dt><span class="section"><a href="making_own_type_index.html#boost_typeindex.making_own_type_index.getting_type_infos_at_runtime">Getting
+<dt><span class="section"><a href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.basics">Basics</a></span></dt>
+<dt><span class="section"><a href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.getting_type_infos_at_runtime">Getting
       type infos at runtime</a></span></dt>
-<dt><span class="section"><a href="making_own_type_index.html#boost_typeindex.making_own_type_index.using_new_type_infos_all_around_">Using
+<dt><span class="section"><a href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.using_new_type_infos_all_around_">Using
       new type infos all around the code</a></span></dt>
 </dl></div>
 <p>
@@ -41,7 +42,7 @@
     </p>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="boost_typeindex.making_own_type_index.basics"></a><a class="link" href="making_own_type_index.html#boost_typeindex.making_own_type_index.basics" title="Basics">Basics</a>
+<a name="boost_typeindex.making_a_custom_type_index.basics"></a><a class="link" href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.basics" title="Basics">Basics</a>
 </h3></div></div></div>
 <p>
         The following example shows how a user defined type_info can be created and
@@ -106,7 +107,7 @@
       </p>
 <pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">my_namespace</span> <span class="special">{</span>
 
-<span class="keyword">class</span> <span class="identifier">my_type_index</span><span class="special">:</span> <span class="keyword">public</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_index_facade</span><span class="special">&lt;</span><span class="identifier">my_type_index</span><span class="special">,</span> <span class="identifier">detail</span><span class="special">::</span><span class="identifier">my_typeinfo</span><span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">class</span> <span class="identifier">my_type_index</span><span class="special">:</span> <span class="keyword">public</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_index_facade</span><span class="special">&lt;</span><span class="identifier">my_type_index</span><span class="special">,</span> <span class="identifier">detail</span><span class="special">::</span><span class="identifier">my_typeinfo</span><span class="special">&gt;</span> <span class="special">{</span>
     <span class="keyword">const</span> <span class="identifier">detail</span><span class="special">::</span><span class="identifier">my_typeinfo</span><span class="special">*</span> <span class="identifier">data_</span><span class="special">;</span>
 
 <span class="keyword">public</span><span class="special">:</span>
@@ -149,7 +150,7 @@
 <span class="special">}</span> <span class="comment">// namespace my_namespace</span>
 </pre>
 <p>
-        Note that we have used the boost::typeind::type_index_facade class as base.
+        Note that we have used the boost::typeindex::type_index_facade class as base.
         That class took care about all the helper function and operators (comparison,
         hashing, ostreaming and others).
       </p>
@@ -171,7 +172,7 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="boost_typeindex.making_own_type_index.getting_type_infos_at_runtime"></a><a class="link" href="making_own_type_index.html#boost_typeindex.making_own_type_index.getting_type_infos_at_runtime" title="Getting type infos at runtime">Getting
+<a name="boost_typeindex.making_a_custom_type_index.getting_type_infos_at_runtime"></a><a class="link" href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.getting_type_infos_at_runtime" title="Getting type infos at runtime">Getting
       type infos at runtime</a>
 </h3></div></div></div>
 <p>
@@ -235,11 +236,11 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="boost_typeindex.making_own_type_index.using_new_type_infos_all_around_"></a><a class="link" href="making_own_type_index.html#boost_typeindex.making_own_type_index.using_new_type_infos_all_around_" title="Using new type infos all around the code">Using
+<a name="boost_typeindex.making_a_custom_type_index.using_new_type_infos_all_around_"></a><a class="link" href="making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.using_new_type_infos_all_around_" title="Using new type infos all around the code">Using
       new type infos all around the code</a>
 </h3></div></div></div>
 <p>
-        There is an easy way to force <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_id</span></code>
+        There is an easy way to force <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span></code>
         to use your own type_index class.
       </p>
 <p>
@@ -255,7 +256,7 @@
         header file:
       </p>
 <pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TYPE_INDEX_REGISTER_CLASS</span> <span class="identifier">MY_TYPEINDEX_REGISTER_CLASS</span>
-<span class="keyword">namespace</span> <span class="identifier">boost</span> <span class="special">{</span> <span class="keyword">namespace</span> <span class="identifier">typeind</span> <span class="special">{</span>
+<span class="keyword">namespace</span> <span class="identifier">boost</span> <span class="special">{</span> <span class="keyword">namespace</span> <span class="identifier">typeindex</span> <span class="special">{</span>
     <span class="keyword">typedef</span> <span class="identifier">my_namespace</span><span class="special">::</span><span class="identifier">my_type_index</span> <span class="identifier">type_index</span><span class="special">;</span>
 <span class="special">}}</span>
 </pre>
@@ -263,7 +264,7 @@
         That's it! Now all TypeIndex global methods and typedefs will be using your
         class:
       </p>
-<pre class="programlisting"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_index</span> <span class="identifier">worldwide</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">my_classes</span><span class="special">&gt;();</span>
+<pre class="programlisting"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_index</span> <span class="identifier">worldwide</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeindex</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">my_classes</span><span class="special">&gt;();</span>
 <span class="identifier">assert</span><span class="special">(</span><span class="identifier">worldwide</span><span class="special">.</span><span class="identifier">pretty_name</span><span class="special">()</span> <span class="special">==</span> <span class="string">"my_classes"</span><span class="special">);</span>
 <span class="identifier">assert</span><span class="special">(</span><span class="identifier">worldwide</span> <span class="special">==</span> <span class="identifier">my_type_index</span><span class="special">::</span><span class="identifier">type_id</span><span class="special">&lt;</span><span class="identifier">my_classes</span><span class="special">&gt;());</span>
 </pre>
@@ -279,7 +280,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../boost/typeind/type_index_facade.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="space_and_performance.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="../boost/typeindex/hash_value.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="space_and_performance.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

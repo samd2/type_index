@@ -4,8 +4,8 @@
 <title>How it works</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
-<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
 <link rel="prev" href="getting_started.html" title="Getting started">
 <link rel="next" href="examples.html" title="Examples">
 </head>
@@ -28,18 +28,25 @@
 </h2></div></div></div>
 <p>
       <code class="computeroutput"><span class="identifier">type_index</span></code> is just a typedef
-      for <code class="computeroutput"><span class="identifier">stl_type_index</span></code> or <code class="computeroutput"><span class="identifier">ctti_type_index</span></code>.
+      for <code class="computeroutput"><a class="link" href="../boost/typeindex/stl_type_index.html" title="Class stl_type_index">boost::typeindex::stl_type_index</a></code>
+      or <code class="computeroutput"><a class="link" href="../boost/typeindex/ctti_type_index.html" title="Class ctti_type_index">boost::typeindex::ctti_type_index</a></code>.
     </p>
 <p>
       Depending on the <code class="computeroutput"><span class="keyword">typeid</span><span class="special">()</span></code>
       availability TypeIndex library will choose an optimal class for <code class="computeroutput"><span class="identifier">type_index</span></code>. In cases when at least basic
       support for <code class="computeroutput"><span class="keyword">typeid</span><span class="special">()</span></code>
-      is available <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">typeind</span><span class="special">::</span><span class="identifier">stl_type_index</span></code> will be used.
+      is available <code class="computeroutput"><span class="identifier">stl_type_index</span></code>
+      will be used.
     </p>
 <p>
-      <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_REGISTER_CLASS</span></code>
+      <code class="computeroutput"><a class="link" href="../BOOST_TYPE_INDEX_REGISTER_CLASS.html" title="Macro BOOST_TYPE_INDEX_REGISTER_CLASS">BOOST_TYPE_INDEX_REGISTER_CLASS</a></code>
       macro is a helper macro that places some virtual helper functions or expands
       to nothing.
+    </p>
+<p>
+      Issues with cross module type comparison on a bugged compilers are bypassed
+      by directly comparing strings with type (latest versions of those compilers
+      resolved that issue using exactly the same approach).
     </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

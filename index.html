@@ -1,10 +1,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Chapter&#160;1.&#160;Boost.TypeIndex 3.0</title>
+<title>Chapter&#160;1.&#160;Boost.TypeIndex 4.0</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
+<link rel="home" href="index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
 <link rel="next" href="boost_typeindex/getting_started.html" title="Getting started">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -21,7 +21,7 @@
 <div class="chapter">
 <div class="titlepage"><div>
 <div><h2 class="title">
-<a name="boost_typeindex"></a>Chapter&#160;1.&#160;Boost.TypeIndex 3.0</h2></div>
+<a name="boost_typeindex"></a>Chapter&#160;1.&#160;Boost.TypeIndex 4.0</h2></div>
 <div><p class="copyright">Copyright &#169; 2012-2014 Antony Polukhin</p></div>
 <div><div class="legalnotice">
 <a name="boost_typeindex.legal"></a><p>
@@ -51,29 +51,40 @@
       information about a type in container </a></span></dt>
 <dt><span class="section"><a href="boost_typeindex/examples.html#boost_typeindex.examples.getting_through_the_inheritance_">Getting
       through the inheritance to receive a real type name </a></span></dt>
-<dt><span class="section"><a href="boost_typeindex/examples.html#boost_typeindex.examples.exact_type_match_storing_type_wi">Exact
-      type match: storing type with const, volatile and reference </a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/examples.html#boost_typeindex.examples.exact_type_matching_storing_type">Exact
+      type matching: storing type with const, volatile and reference qualifiers</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/examples.html#boost_typeindex.examples.table_of_raw_name_and_pretty_nam">Table
+      of raw_name() and pretty_name() outputs with and without RTTI </a></span></dt>
 </dl></dd>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html">Boost.TypeIndex Header Reference</a></span></dt>
 <dd><dl>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index_hpp">Header &lt;boost/type_index.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.ctti_register_class_hpp">Header &lt;boost/type_index/ctti_register_class.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.ctti_type_index_hpp">Header &lt;boost/type_index/ctti_type_index.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.detail.compile_time_type_info_hpp">Header &lt;boost/type_index/detail/compile_time_type_info.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.stl_register_class_hpp">Header &lt;boost/type_index/stl_register_class.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.stl_type_index_hpp">Header &lt;boost/type_index/stl_type_index.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex_header_reference.html#header.boost.type_index.type_index_facade_hpp">Header &lt;boost/type_index/type_index_facade.hpp&gt;</a></span></dt>
 </dl></dd>
-<dt><span class="section"><a href="boost_typeindex/making_own_type_index.html">Making own type_index</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/making_a_custom_type_index.html">Making a custom
+    type_index</a></span></dt>
 <dd><dl>
-<dt><span class="section"><a href="boost_typeindex/making_own_type_index.html#boost_typeindex.making_own_type_index.basics">Basics</a></span></dt>
-<dt><span class="section"><a href="boost_typeindex/making_own_type_index.html#boost_typeindex.making_own_type_index.getting_type_infos_at_runtime">Getting
+<dt><span class="section"><a href="boost_typeindex/making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.basics">Basics</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.getting_type_infos_at_runtime">Getting
       type infos at runtime</a></span></dt>
-<dt><span class="section"><a href="boost_typeindex/making_own_type_index.html#boost_typeindex.making_own_type_index.using_new_type_infos_all_around_">Using
+<dt><span class="section"><a href="boost_typeindex/making_a_custom_type_index.html#boost_typeindex.making_a_custom_type_index.using_new_type_infos_all_around_">Using
       new type infos all around the code</a></span></dt>
 </dl></dd>
 <dt><span class="section"><a href="boost_typeindex/space_and_performance.html">Space and Performance</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex/code_bloat.html">Code bloat</a></span></dt>
-<dt><span class="section"><a href="boost_typeindex/compiler_support.html">Compiler support</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/rtti_emulation_limitations.html">RTTI emulation
+    limitations</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="boost_typeindex/rtti_emulation_limitations.html#boost_typeindex.rtti_emulation_limitations.define_the_boost_type_index_func">Define
+      the BOOST_TYPE_INDEX_FUNCTION_SIGNATURE macro</a></span></dt>
+<dt><span class="section"><a href="boost_typeindex/rtti_emulation_limitations.html#boost_typeindex.rtti_emulation_limitations.fixing_pretty_name_output">Fixing
+      pretty_name() output</a></span></dt>
+</dl></dd>
 <dt><span class="section"><a href="boost_typeindex/mixing_sources_with_rtti_on_and_.html">Mixing
     sources with RTTI on and RTTI off</a></span></dt>
 <dt><span class="section"><a href="boost_typeindex/acknowledgements.html">Acknowledgements</a></span></dt>
@@ -86,7 +97,7 @@
 <p>
       Sometimes getting and storing information about a type at runtime is required.
       For such cases a construction like <code class="computeroutput"><span class="special">&amp;</span><span class="keyword">typeid</span><span class="special">(</span><span class="identifier">T</span><span class="special">)</span></code> or C++11 class <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_index</span></code>
-      is usually used. And that is the point, where problems start:
+      is usually used, which is where problems start:
     </p>
 <div class="itemizedlist"><ul class="itemizedlist" type="disc">
 <li class="listitem">
@@ -96,7 +107,7 @@
         </li>
 <li class="listitem">
           some implementations of <code class="computeroutput"><span class="keyword">typeid</span><span class="special">(</span><span class="identifier">T</span><span class="special">)</span></code>
-          strip const, volatile and references from type, while others don't
+          erroneously do not strip const, volatile and references from type
         </li>
 <li class="listitem">
           some compilers have bugs and do not correctly compare <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">type_info</span></code>
@@ -128,19 +139,10 @@
         of it as of <code class="computeroutput"><span class="identifier">T</span></code> in <code class="computeroutput"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span></code>
       </p></td></tr>
 </table></div>
-<div class="warning"><table border="0" summary="Warning">
-<tr>
-<td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/warning.png"></td>
-<th align="left">Warning</th>
-</tr>
-<tr><td align="left" valign="top"><p>
-        Version 3.0 of this library is waitning for Boost mini-review.
-      </p></td></tr>
-</table></div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
-<td align="left"><p><small>Last revised: March 05, 2014 at 11:15:27 GMT</small></p></td>
+<td align="left"><p><small>Last revised: May 07, 2014 at 11:33:27 GMT</small></p></td>
 <td align="right"><div class="copyright-footer"></div></td>
 </tr></table>
 <hr>

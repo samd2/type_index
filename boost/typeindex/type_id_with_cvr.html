@@ -4,7 +4,7 @@
 <title>Function template type_id_with_cvr</title>
 <link rel="stylesheet" href="http://www.boost.org/doc/libs/1_53_0/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 3.0">
+<link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Boost.TypeIndex 4.0">
 <link rel="up" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp" title="Header &lt;boost/type_index.hpp&gt;">
 <link rel="prev" href="type_id.html" title="Function template type_id">
 <link rel="next" href="type_id_runtime.html" title="Function template type_id_runtime">
@@ -23,10 +23,10 @@
 <a accesskey="p" href="type_id.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="type_id_runtime.html"><img src="http://www.boost.org/doc/libs/1_53_0/doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
-<a name="boost.typeind.type_id_with_cvr"></a><div class="titlepage"></div>
+<a name="boost.typeindex.type_id_with_cvr"></a><div class="titlepage"></div>
 <div class="refnamediv">
 <h2><span class="refentrytitle">Function template type_id_with_cvr</span></h2>
-<p>boost::typeind::type_id_with_cvr</p>
+<p>boost::typeindex::type_id_with_cvr</p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
 <div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../boost_typeindex_header_reference.html#header.boost.type_index_hpp" title="Header &lt;boost/type_index.hpp&gt;">boost/type_index.hpp</a>&gt;
@@ -34,8 +34,8 @@
 </span>
 <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">type_index</span> <span class="identifier">type_id_with_cvr</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp62230240"></a><h2>Description</h2>
-<p>Function for constructing boost::type_index instance for type T. Does not remove const, volatile, &amp; and &amp;&amp; modifiers from T.</p>
+<a name="idp5681296"></a><h2>Description</h2>
+<p>Function for constructing boost::typeindex::type_index instance for type T. Does not remove const, volatile, &amp; and &amp;&amp; modifiers from T.</p>
 <p>If T has no const, volatile, &amp; and &amp;&amp; modifiers, then returns exactly the same result as in case of calling <code class="computeroutput">type_id&lt;T&gt;()</code>.</p>
 <p><span class="bold"><strong>Example:</strong></span> </p>
 <pre class="programlisting"><span class="identifier">type_index</span> <span class="identifier">ti</span> <span class="special">=</span> <span class="identifier">type_id_with_cvr</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&amp;</span><span class="special">&gt;</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
@@ -60,7 +60,7 @@
 </tr>
 <tr>
 <td><p><span class="term">Returns:</span></p></td>
-<td><p>boost::typeind::type_index with information about the specified type T. </p></td>
+<td><p>boost::typeindex::type_index with information about the specified type T. </p></td>
 </tr>
 <tr>
 <td><p><span class="term">Throws:</span></p></td>
