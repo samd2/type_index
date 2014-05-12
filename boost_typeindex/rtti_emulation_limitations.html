@@ -95,7 +95,7 @@
         a lot of text around the <code class="computeroutput"><span class="keyword">int</span></code>
         * or does not return type at all then you are usng a compiler that was not
         tested with this library and you need to setup the <code class="computeroutput"><a class="link" href="../BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING.html" title="Macro BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</a></code>
-        macro using <code class="computeroutput"><a class="link" href="../BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS.html" title="Macro BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</a></code>.
+        macro.
       </p>
 <p>
         Here is a short instruction:
@@ -106,7 +106,7 @@
           </li>
 <li class="listitem">
             define <code class="computeroutput"><a class="link" href="../BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING.html" title="Macro BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</a></code>
-            to <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</span><span class="special">(</span><span class="identifier">skip_at_begin</span><span class="special">,</span> <span class="identifier">skip_at_end</span><span class="special">,</span> <span class="keyword">false</span><span class="special">,</span> <span class="string">""</span><span class="special">)</span></code>, where
+            to <code class="computeroutput"><span class="special">(</span><span class="identifier">skip_at_begin</span><span class="special">,</span> <span class="identifier">skip_at_end</span><span class="special">,</span> <span class="keyword">false</span><span class="special">,</span> <span class="string">""</span><span class="special">)</span></code>, where
             <div class="itemizedlist"><ul class="itemizedlist" type="disc">
 <li class="listitem">
                   <code class="computeroutput"><span class="identifier">skip_at_begin</span></code> is
@@ -124,7 +124,7 @@
           </li>
 <li class="listitem">
             if it does not return <code class="computeroutput"><span class="keyword">int</span></code>,
-            then define BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING to <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</span><span class="special">(</span><span class="identifier">skip_at_begin</span><span class="special">,</span> <span class="identifier">skip_at_end</span><span class="special">,</span> <span class="keyword">true</span><span class="special">,</span> <span class="string">"T = "</span><span class="special">)</span></code>, where
+            then define BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING to <code class="computeroutput"><span class="special">(</span><span class="identifier">skip_at_begin</span><span class="special">,</span> <span class="identifier">skip_at_end</span><span class="special">,</span> <span class="keyword">true</span><span class="special">,</span> <span class="string">"T = "</span><span class="special">)</span></code>, where
             <div class="itemizedlist"><ul class="itemizedlist" type="disc">
 <li class="listitem">
                   <code class="computeroutput"><span class="identifier">skip_at_begin</span></code> is
@@ -146,7 +146,7 @@
 <li class="listitem">
             (optional, but highly recomended) <a href="http://www.boost.org/support/bugs.html" target="_top">create
             ticket</a> with feature request to add your compiler to supported
-            compilers list. Include parameters provided to <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</span></code>
+            compilers list. Include parameters provided to <code class="computeroutput"><span class="identifier">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</span></code>
             macro.
           </li>
 </ol></div>
@@ -160,7 +160,7 @@
         to <code class="computeroutput"><span class="keyword">sizeof</span><span class="special">(</span><span class="string">"const char *__cdecl boost::detail::ctti&lt;"</span><span class="special">)</span> <span class="special">-</span> <span class="number">1</span></code>
         and <code class="computeroutput"><span class="identifier">skip_at_end</span></code> to <code class="computeroutput"><span class="keyword">sizeof</span><span class="special">(</span><span class="string">"&gt;::n(void)"</span><span class="special">)</span> <span class="special">-</span> <span class="number">1</span></code>.
       </p>
-<pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</span> <span class="identifier">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</span><span class="special">(</span><span class="number">39</span><span class="special">,</span> <span class="number">6</span><span class="special">,</span> <span class="keyword">false</span><span class="special">,</span> <span class="string">""</span><span class="special">)</span>
+<pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</span> <span class="special">(</span><span class="number">39</span><span class="special">,</span> <span class="number">6</span><span class="special">,</span> <span class="keyword">false</span><span class="special">,</span> <span class="string">""</span><span class="special">)</span>
 </pre>
 <p>
         Another example:
@@ -173,7 +173,7 @@
         and <code class="computeroutput"><span class="identifier">skip_at_end</span></code> to <code class="computeroutput"><span class="keyword">sizeof</span><span class="special">(</span><span class="string">"]"</span><span class="special">)</span> <span class="special">-</span> <span class="number">1</span></code>
         and last parameter of macto to "T = ".
       </p>
-<pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</span> <span class="identifier">BOOST_TYPE_INDEX_REGISTER_CTTI_PARSING_PARAMS</span><span class="special">(</span><span class="number">39</span><span class="special">,</span> <span class="number">1</span><span class="special">,</span> <span class="keyword">true</span><span class="special">,</span> <span class="string">"T = "</span><span class="special">)</span>
+<pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TYPE_INDEX_CTTI_USER_DEFINED_PARSING</span> <span class="special">(</span><span class="number">39</span><span class="special">,</span> <span class="number">1</span><span class="special">,</span> <span class="keyword">true</span><span class="special">,</span> <span class="string">"T = "</span><span class="special">)</span>
 </pre>
 </div>
 </div>

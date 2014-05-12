@@ -34,8 +34,7 @@
           type when possible.
         </li>
 <li class="listitem">
-          <code class="computeroutput"><span class="identifier">type_index</span></code> class hold a
-          single pointer, so it is easy and fast to copy.
+          All the type_index classes hold a single pointer and are fast to copy.
         </li>
 <li class="listitem">
           Calls to <code class="computeroutput"><span class="keyword">const</span> <span class="keyword">char</span><span class="special">*</span> <span class="identifier">raw_name</span><span class="special">()</span></code> do not require dynamic memory allocation
@@ -43,8 +42,8 @@
           of the binary image.
         </li>
 <li class="listitem">
-          Comparison operators are optimized as much as possible, and will at worst
-          execute a single <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">strcmp</span></code>.
+          Comparison operators are optimized as much as possible and execute a single
+          <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">strcmp</span></code> in worst case.
         </li>
 <li class="listitem">
           Calls to <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">pretty_name</span><span class="special">()</span></code> usually require dynamic memory allocation
