@@ -240,7 +240,7 @@
         <span class="keyword">int</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">100</span><span class="special">;</span>
 
         <span class="comment">// An attempt to convert stored function to a function accepting reference</span>
-        <span class="identifier">func</span><span class="special">.</span><span class="identifier">call</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&amp;&gt;(</span><span class="identifier">i</span><span class="special">);</span> <span class="comment">// Will throw, because types `int&amp;` and `int` missmatch</span>
+        <span class="identifier">func</span><span class="special">.</span><span class="identifier">call</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&amp;&gt;(</span><span class="identifier">i</span><span class="special">);</span> <span class="comment">// Will throw, because types `int&amp;` and `int` mismatch</span>
 
         <span class="identifier">assert</span><span class="special">(</span><span class="keyword">false</span><span class="special">);</span>
     <span class="special">}</span> <span class="keyword">catch</span> <span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">runtime_error</span><span class="special">&amp;</span> <span class="comment">/*e*/</span><span class="special">)</span> <span class="special">{}</span>
@@ -465,7 +465,7 @@
 <tr>
 <td>
                 <p>
-                  Template class with templae classes
+                  Template class with template classes
                 </p>
               </td>
 <td>
@@ -491,7 +491,7 @@
 </div>
 <br class="table-break"><p>
         We have not show the "noRTTI &amp; pretty_name" column in the table
-        becuse it is almost equal to "noRTTI &amp; raw_name" column.
+        because it is almost equal to "noRTTI &amp; raw_name" column.
       </p>
 <div class="warning"><table border="0" summary="Warning">
 <tr>
