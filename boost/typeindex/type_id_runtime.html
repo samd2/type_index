@@ -34,9 +34,9 @@
 </span>
 <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">type_index</span> <span class="identifier">type_id_runtime</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> runtime_val<span class="special">)</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp89636032"></a><h2>Description</h2>
+<a name="idm45816615674848"></a><h2>Description</h2>
 <p>Function that works exactly like C++ typeid(rtti_val) call, but returns boost::type_index.</p>
-<p>Retunrs runtime information about specified type.</p>
+<p>Returns runtime information about specified type.</p>
 <p><span class="bold"><strong>Requirements:</strong></span> RTTI available or Base and Derived classes must be marked with BOOST_TYPE_INDEX_REGISTER_CLASS.</p>
 <p><span class="bold"><strong>Example:</strong></span> </p>
 <pre class="programlisting"><span class="keyword">struct</span> <span class="identifier">Base</span> <span class="special">{</span> <span class="keyword">virtual</span> <span class="special">~</span><span class="identifier">Base</span><span class="special">(</span><span class="special">)</span><span class="special">{</span><span class="special">}</span> <span class="special">}</span><span class="special">;</span>
@@ -60,7 +60,7 @@
 <col align="left" valign="top">
 <tbody><tr>
 <td><p><span class="term"><code class="computeroutput">runtime_val</code></span></p></td>
-<td><p>Varaible which runtime type must be returned. </p></td>
+<td><p>Variable which runtime type must be returned. </p></td>
 </tr></tbody>
 </table></div></td>
 </tr>
