@@ -89,7 +89,7 @@ jobs:
           TRAVIS_OS_NAME: "linux"
         run: |
           echo '==================================> SETUP'
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          # BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
           echo '==================================> PACKAGES'
           set -ex
           echo "Before package removal or install"
@@ -211,7 +211,7 @@ jobs:
           echo $OTHER_LIBS
           eval "$LCOV --remove $TRAVIS_BUILD_DIR/coverals/coverage.info $OTHER_LIBS -o $TRAVIS_BUILD_DIR/coverals/coverage.info"
           cd $TRAVIS_BUILD_DIR
-          gem install coveralls-lcov
+          sudo gem install coveralls-lcov || echo "ERROR. Failed to install coveralls-lcov"
           coveralls-lcov coverals/coverage.info
 
           fi
